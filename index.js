@@ -53,3 +53,40 @@ const state = {
   ],
   cart: []
 };
+
+//const groceryShelf = document.querySelector(".store--items-list")
+
+
+
+function createShopItemCard(shopItem) {
+  const li = document.createElement('li')
+
+
+  const div = document.createElement('div')
+  div.setAttribute('class', 'store--item-icon')
+  li.appendChild(div)
+  
+  const imageSource = `./assets/icons/${shopItem.id}.svg`
+  const img = document.createElement('img')
+  img.setAttribute('src', imageSource)
+  
+  div.appendChild(img)
+
+  
+
+  return li
+}
+
+function populateShopItems() {
+  const shopItemsUL = document.querySelector('.store--item-list')
+  console.log(shopItemsUL)
+for (let i = 0; i < state.items.length; i++) {
+  const shopItem = state.items[i]
+  
+  const currentItemLI = createShopItemCard(shopItem)
+  shopItemsUL.append(currentItemLI)
+
+}
+}
+
+populateShopItems()
