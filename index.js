@@ -62,16 +62,19 @@ function createShopItemCard(shopItem) {
   const li = document.createElement('li')
 
 
-  const div = document.createElement('div')
-  div.setAttribute('class', 'store--item-icon')
-  li.appendChild(div)
+  const div = document.createElement('div');
+  div.setAttribute('class', 'store--item-icon');
+  li.appendChild(div);
   
-  const imageSource = `./assets/icons/${shopItem.id}.svg`
-  const img = document.createElement('img')
-  img.setAttribute('src', imageSource)
+  const imageSource = `./assets/icons/${shopItem.id}.svg`;
+  const img = document.createElement('img');
+  img.setAttribute('src', imageSource);
   
-  div.appendChild(img)
+  div.appendChild(img);
 
+  const button = document.createElement("button");
+  button.innerText = "Add to chart";
+  li.append(button);
   
 
   return li
